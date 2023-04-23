@@ -7,7 +7,7 @@ from den.build import build
 from den.check import check
 
 def main():
-    if sys.argv[1] == "check":
+    if len(sys.argv) > 1 and sys.argv[1] == "check":
         check(sys.argv[2:])
         return
 
@@ -22,7 +22,7 @@ def main():
     parser_build.add_argument("--wheel", action="store_true", help="Build a wheel distribution.")
 
     # Check command
-    parser_check = subparsers.add_parser("check", help="Lint the package")
+    parser_check = subparsers.add_parser("check", help="Lint the package with ruff")
 
     # Doc command
     parser_doc = subparsers.add_parser("doc", help="Build the package's documentation")
