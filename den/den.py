@@ -58,9 +58,6 @@ def main():
     if args.command == "build":
         # Import and call build function
         build(args)
-    elif args.command == "check":
-        # Import and call check function
-        check(args)
     elif args.command == "doc":
         # Import and call doc function
         pass
