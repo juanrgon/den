@@ -9,7 +9,6 @@ from den.check import check
 def main():
     if len(sys.argv) > 1 and sys.argv[1] == "check":
         check(sys.argv[2:])
-        return
 
     parser = argparse.ArgumentParser(description="A Python package manager and build tool")
     subparsers = parser.add_subparsers(help="Sub-commands", dest="command")
