@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 build = "*"
+ruff = "^0.0.262"
 
 [tool.poetry.scripts]
 den = "den.den:main"
