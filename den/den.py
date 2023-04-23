@@ -2,6 +2,7 @@
 
 import argparse
 import sys
+from den.new import create_new_project
 
 def main():
     parser = argparse.ArgumentParser(description="A Python package manager and build tool")
@@ -56,7 +57,7 @@ def main():
         pass
     elif args.command == "new":
         # Import and call new function
-        pass
+        create_new_project(args)
     elif args.command == "init":
         # Import and call init function
         pass
