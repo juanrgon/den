@@ -3,6 +3,7 @@
 import argparse
 import sys
 from den.new import create_new_project
+from den.build import build
 
 def main():
     parser = argparse.ArgumentParser(description="A Python package manager and build tool")
@@ -10,6 +11,10 @@ def main():
 
     # Build command
     parser_build = subparsers.add_parser("build", help="Build the Python package")
+    parser_build.add_argument("project_path", nargs="?", help="The path to the project.")
+    parser_build.add_argument("--output-directory", help="The directory to store the built package.")
+    parser_build.add_argument("--sdist", action="store_true", help="Build a source distribution.")
+    parser_build.add_argument("--wheel", action="store_true", help="Build a wheel distribution.")
 
     # Check command
     parser_check = subparsers.add_parser("check", help="Lint the package")
@@ -48,7 +53,7 @@ def main():
 
     if args.command == "build":
         # Import and call build function
-        pass
+        build(args)
     elif args.command == "check":
         # Import and call check function
         pass
